@@ -1,77 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Grid CSS</title>
-        <link rel="stylesheet" href="index.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid CSS</title>
+    <link rel="stylesheet" href="index.css">
+</head>
 
-    <body class="body">
+<body class="body">
 
-        <header class="header">
-            <h1>Header</h1>
-        </header>
-        <nav class="nav">
-            <ul>
-                <li>
-                    <a href="#">op1</a>
-                </li>
-                <li>
-                    <a href="#">op2</a>
-                </li>
-                <li>
-                    <a href="#">op3</a>
-                </li>
-                <li>
-                    <a href="#">op4</a>
-                </li>
-            </ul>
-        </nav>
-        <main class="main">
-            <article>
-                <header class="subheader">Plantilla semántica</header>
-                <figure>
-                    <img width="100%" style="border-radius: 50%;"
-                        src="https://media.istockphoto.com/id/1399292810/es/foto/grupo-de-animales-salvajes-en-la-selva-juntos.jpg?s=612x612&w=0&k=20&c=dQgHX-hoXSx4E6oX6Wq2vwurcIlo8EJ-GVPpKENc7I4="
-                        alt="Sombras de Mordor" />
-                    <figcaption style="text-align: center; margin-top: 12px;"><i> Imagen de
-                        istockphoto</i></figcaption>
-                </figure>
-                <p class="text_main" style="width: 90%; margin: auto;">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing
-                    elit. Dolores voluptatem autem tenetur molestiae.
-                    Placeat, dignissimos. Consequuntur molestiae quis
-                    dolores nisi a asperiores. Officia sequi voluptates quas
-                    officiis laboriosam temporibus sint.
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Non necessitatibus, assumenda iure tenetur obcaecati
-                    laborum ad architecto explicabo soluta porro sapiente
-                    eius numquam magnam, enim molestias repellat nemo
-                    inventore mollitia.
-                </p>
-                <footer>
-                    <small>
-                        Footer.
-                    </small>
-                </footer>
-            </article>
-            <section>
-                <p>Section</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nulla placeat nostrum, illo quam ipsum atque non
-                    voluptatem porro at. Nesciunt voluptates minima earum
-                    illo ipsum est eum delectus velit numquam.</p>
-            </section>
-        </main>
-        <aside class="aside"><section class="asideSection"><h3 style="text-align: center;">Aside</h3> <br> Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Vero minus eius officiis impedit debitis dolore
-            est rem, reiciendis consequatur dignissimos culpa explicabo.
-            Similique placeat dignissimos ducimus esse at iure dolorem.</section></aside>
+    <header class="header">
+        <h1>Header</h1>
+    </header>
 
-        <footer class="footer">Footer principal</footer>
+    <nav class="nav">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="menu">
+            <li><a href="#">op1</a></li>
+            <li><a href="#">op2</a></li>
+            <li><a href="#">op3</a></li>
+            <li><a href="#">op4</a></li>
+        </ul>
+    </nav>
 
-    </body>
+    <main class="main">
+        <div class="device-buttons">
+            <button id="desktop-btn" onclick="setDevice('desktop')">Desktop</button>
+            <button id="tablet-btn" onclick="setDevice('tablet')">Tablet</button>
+            <button id="mobile-btn" onclick="setDevice('mobile')">Mobile</button>
+        </div>        
+        <article>
+            <header class="subheader">Plantilla semántica</header>
+            <figure>
+                <img width="100%" style="border-radius: 50%;"
+                    src="https://media.istockphoto.com/id/1399292810/es/foto/grupo-de-animales-salvajes-en-la-selva-juntos.jpg?s=612x612&w=0&k=20&c=dQgHX-hoXSx4E6oX6Wq2vwurcIlo8EJ-GVPpKENc7I4="
+                    alt="Sombras de Mordor" />
+                <figcaption style="text-align: center; margin-top: 12px;"><i> Imagen de istockphoto</i></figcaption>
+            </figure>
+            <p class="text_main" style="width: 90%; margin: auto;">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores voluptatem autem tenetur molestiae.
+                Placeat, dignissimos. Consequuntur molestiae quis dolores nisi a asperiores. Officia sequi voluptates quas
+                officiis laboriosam temporibus sint. Lorem ipsum dolor sit amet consectetur adipisicing elit. Non
+                necessitatibus, assumenda iure tenetur obcaecati laborum ad architecto explicabo soluta porro sapiente eius
+                numquam magnam, enim molestias repellat nemo inventore mollitia.
+            </p>
+            <footer>
+                <small>Footer.</small>
+            </footer>
+        </article>
+
+        <section>
+            <p>Section</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla placeat nostrum, illo quam ipsum atque non
+                voluptatem porro at. Nesciunt voluptates minima earum illo ipsum est eum delectus velit numquam.</p>
+        </section>
+    </main>
+
+    <aside class="aside">
+        <section class="asideSection">
+            <h3 style="text-align: center;">Aside</h3><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero minus eius officiis impedit debitis dolore est
+            rem, reiciendis consequatur dignissimos culpa explicabo. Similique placeat dignissimos ducimus esse at iure
+            dolorem.
+        </section>
+    </aside>
+
+    <footer class="footer">Footer principal</footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+
+        function setDevice(device) {
+    const desktopBtn = document.getElementById('desktop-btn');
+    const tabletBtn = document.getElementById('tablet-btn');
+    const mobileBtn = document.getElementById('mobile-btn');
+
+    // Reset classes
+    desktopBtn.classList.remove('active');
+    tabletBtn.classList.remove('active');
+    mobileBtn.classList.remove('active');
+
+    // Set the active class for the clicked button
+    if (device === 'desktop') {
+        desktopBtn.classList.add('active');
+        document.body.style.width = '100%';  
+    } else if (device === 'tablet') {
+        tabletBtn.classList.add('active');
+        document.body.style.width = '768px'; 
+    } else if (device === 'mobile') {
+        mobileBtn.classList.add('active');
+        document.body.style.width = '375px'; 
+    }
+}
+
+window.onload = function () {
+    if (window.innerWidth >= 1224) {
+        setDevice('desktop');
+    } else if (window.innerWidth >= 768) {
+        setDevice('tablet');
+    } else {
+        setDevice('mobile');
+    }
+};
+
+    </script>
+
+</body>
 
 </html>
